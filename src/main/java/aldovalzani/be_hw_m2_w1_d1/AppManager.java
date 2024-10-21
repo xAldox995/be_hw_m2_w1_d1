@@ -7,7 +7,6 @@ import aldovalzani.be_hw_m2_w1_d1.entities.Topping;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Configuration
@@ -28,6 +27,7 @@ public class AppManager {
         return margherita;
     }
 
+    @Bean
     public Pizza antiCristoPizza() {
         Pizza pizza = new Pizza(400, "Pizza Hawaiana", 5.0);
         pizza.addCondimento(prosciutto());
@@ -46,9 +46,9 @@ public class AppManager {
     }
 
     @Bean
-    public Menu menu() {
-        List<Pizza> pizzaList = Arrays.asList(margherita(), antiCristoPizza());
-        List<Drink> drinkList = Arrays.asList(cola(), fanta());
+    public Menu menu(List<Drink> drinkList, List<Pizza> pizzaList) {
+//        List<Pizza> pizzaList = Arrays.asList(margherita(), antiCristoPizza());
+//        List<Drink> drinkList = Arrays.asList(cola(), fanta());
         return new Menu(drinkList, pizzaList);
     }
 }
