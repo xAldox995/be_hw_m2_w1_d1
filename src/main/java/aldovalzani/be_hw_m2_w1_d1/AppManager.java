@@ -29,7 +29,7 @@ public class AppManager {
     }
 
     public Pizza antiCristoPizza() {
-        Pizza pizza = new Pizza(400, "Piazza Hawaiana", 5.0);
+        Pizza pizza = new Pizza(400, "Pizza Hawaiana", 5.0);
         pizza.addCondimento(prosciutto());
         pizza.addCondimento(ananas());
         return pizza;
