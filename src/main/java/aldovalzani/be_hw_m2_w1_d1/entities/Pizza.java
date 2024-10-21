@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class Pizza extends Alimento {
-    protected List<Topping> condimenti = new ArrayList<>();
+    protected List<Topping> condimenti;
 
     public Pizza(int calories, String name, double price) {
         super(calories, name, price);
