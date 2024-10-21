@@ -1,17 +1,31 @@
 package aldovalzani.be_hw_m2_w1_d1.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@ToString
+
 public class Pizza extends Alimento {
-    private List<Topping> condimenti = new ArrayList<>();
+    protected List<Topping> condimenti = new ArrayList<>();
+
+    public Pizza(int calories, String name, double price) {
+        super(calories, name, price);
+        this.condimenti = new ArrayList<>();
+    }
+
+    public Pizza() {
+    }
+
+    public void addCondimento(Topping topping) {
+        condimenti.add(topping);
+        setPrice(getPrice() + topping.getPrice());
+        setCalories(getCalories() + topping.getCalories());
+    }
+
+    public List<Topping> getCondimenti() {
+        return condimenti;
+    }
+
+    public void setCondimenti(List<Topping> condimenti) {
+        this.condimenti = condimenti;
+    }
 }
